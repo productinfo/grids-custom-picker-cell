@@ -84,8 +84,24 @@
     [self respondToEditEvent];
 }
 
+// Called when the grid's edit event is triggered on this cell
 - (void) respondToEditEvent {
     // Override the text cell's default edit response (showing the keyboard) and show a picker popover instead
+    // We need to call the grid's delegate methods for editing cells here, because that would be done in the text cell's method.
+    
+    // Call the shouldBeginEditingCellAtCoordinate method on the grid's delegate (if the method exists)
+    if ([self.dataGrid.delegate respondsToSelector:@selector(shinobiDataGrid:shouldBeginEditingCellAtCoordinate:)]) {
+        if([self.dataGrid.delegate shinobiDataGrid:self.dataGrid shouldBeginEditingCellAtCoordinate:self.coordinate] == NO) {
+            return;
+        }
+    }
+    
+    // Call the willBeingEditingCellAtCoordinate method on the grid's delegate (if the method exists)
+    if ([self.dataGrid.delegate respondsToSelector:@selector(shinobiDataGrid:willBeginEditingCellAtCoordinate:)]) {
+        [self.dataGrid.delegate shinobiDataGrid:self.dataGrid willBeginEditingCellAtCoordinate:self.coordinate];
+    }
+    
+    // Finally create and display the popover
     _popover = [[UIPopoverController alloc] initWithContentViewController:_pickerViewController];
     [_popover presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
 }
