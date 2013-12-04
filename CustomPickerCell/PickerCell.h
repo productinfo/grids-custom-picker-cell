@@ -25,7 +25,7 @@
 /**
  PickerCell subclasses SDataGridCell to display a UIPicker inside a popover when in edit mode
  */
-@interface PickerCell : SDataGridTextCell<PickerDelegate>
+@interface PickerCell : SDataGridCell<PickerDelegate>
 
 @property (nonatomic, assign) int selectedIndex;
 @property (nonatomic, strong) NSArray* values;

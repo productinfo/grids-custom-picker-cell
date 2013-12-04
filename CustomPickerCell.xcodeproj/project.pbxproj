@@ -19,11 +19,11 @@
 		683E7C91183CD9500038CFF1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683E7C90183CD9500038CFF1 /* XCTest.framework */; };
 		683E7C92183CD9500038CFF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683E7C71183CD94F0038CFF1 /* Foundation.framework */; };
 		683E7C93183CD9500038CFF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683E7C75183CD94F0038CFF1 /* UIKit.framework */; };
-		683E7CA7183CD98A0038CFF1 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683E7CA6183CD98A0038CFF1 /* ShinobiGrids.framework */; };
 		683E7CAA184363510038CFF1 /* PersonDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E7CA9184363510038CFF1 /* PersonDataObject.m */; };
 		683E7CAD18436E6C0038CFF1 /* PersonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E7CAC18436E6C0038CFF1 /* PersonDataSource.m */; };
 		683E7CB018437E4B0038CFF1 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E7CAF18437E4A0038CFF1 /* PickerCell.m */; };
 		683E7CB618449FEA0038CFF1 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E7CB518449FEA0038CFF1 /* PickerViewController.m */; };
+		68CF814D184E1D7A000E5481 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CF814C184E1D7A000E5481 /* ShinobiGrids.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		683E7C89183CD9500038CFF1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		683E7C8F183CD9500038CFF1 /* CustomPickerCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomPickerCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		683E7C90183CD9500038CFF1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		683E7CA6183CD98A0038CFF1 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = Library/Frameworks/ShinobiGrids.framework; sourceTree = DEVELOPER_DIR; };
 		683E7CA8184363510038CFF1 /* PersonDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PersonDataObject.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		683E7CA9184363510038CFF1 /* PersonDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PersonDataObject.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		683E7CAB18436E6C0038CFF1 /* PersonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PersonDataSource.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -62,6 +61,7 @@
 		683E7CAF18437E4A0038CFF1 /* PickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerCell.m; sourceTree = "<group>"; };
 		683E7CB418449FEA0038CFF1 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PickerViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		683E7CB518449FEA0038CFF1 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PickerViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		68CF814C184E1D7A000E5481 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = ../../../../Downloads/ShinobiGrids.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				683E7CA7183CD98A0038CFF1 /* ShinobiGrids.framework in Frameworks */,
+				68CF814D184E1D7A000E5481 /* ShinobiGrids.framework in Frameworks */,
 				683E7C74183CD94F0038CFF1 /* CoreGraphics.framework in Frameworks */,
 				683E7C76183CD94F0038CFF1 /* UIKit.framework in Frameworks */,
 				683E7C72183CD94F0038CFF1 /* Foundation.framework in Frameworks */,
@@ -110,7 +110,7 @@
 		683E7C70183CD94F0038CFF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				683E7CA6183CD98A0038CFF1 /* ShinobiGrids.framework */,
+				68CF814C184E1D7A000E5481 /* ShinobiGrids.framework */,
 				683E7C71183CD94F0038CFF1 /* Foundation.framework */,
 				683E7C73183CD94F0038CFF1 /* CoreGraphics.framework */,
 				683E7C75183CD94F0038CFF1 /* UIKit.framework */,
@@ -377,6 +377,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/aclarke/Downloads,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomPickerCell/CustomPickerCell-Prefix.pch";
@@ -394,6 +395,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/aclarke/Downloads,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomPickerCell/CustomPickerCell-Prefix.pch";

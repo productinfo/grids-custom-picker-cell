@@ -37,8 +37,10 @@
 {
     [super viewDidLoad];
 	
+    NSLog(@"Shinobi version: %@", [_shinobiDataGrid getInfo]);
+    
     // Set up the license key if you're using the trial version
-    _shinobiDataGrid.licenseKey = @""; // TODO: add your trial licence key here!
+    _shinobiDataGrid.licenseKey = @"NHH1ZmualDHxTMSMjAxNDAxMDNpbmZvQHNoaW5vYmljb250cm9scy5jb20=yuEfb5nKINCeL3Cd7BvEov5etl3xg80Pf8deKwR752raCRQbbKHqPY54LtHE8+hWXUdCNQIzR0LGCKCR7qMODgriD38DorVLlBl++mM8p09xPfbE+CE27RktXp1bR2dBw5ANcKiw8DIWxRNSt3nPsQTu+o7Q=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+"; // TODO: add your trial licence key here!
     
     // Add a title column, with the custom PickerCell type
     SDataGridColumn* titleColumn = [[SDataGridColumn alloc] initWithTitle:@"Title" forProperty:@"title"];
@@ -101,33 +103,38 @@
 - (void)shinobiDataGrid:(ShinobiDataGrid *)grid didFinishEditingCellAtCoordinate:(SDataGridCoord *)coordinate
 {
     // Find the cell that was edited (all our cells are SDataGridTextCells)
-    SDataGridTextCell* cell = (SDataGridTextCell*)[_shinobiDataGrid visibleCellAtCoordinate:coordinate];
+    SDataGridCell* cell = (SDataGridCell*)[_shinobiDataGrid visibleCellAtCoordinate:coordinate];
     
     // Locate the 'model' object for this row
     PersonDataObject* person = _data[coordinate.row.rowIndex];
     
     // Determine which column this cell belongs to
-    if ([cell.coordinate.column.title isEqualToString:@"Forename"])
-    {
-        person.forename = cell.textField.text;
-    }
-    if ([cell.coordinate.column.title isEqualToString:@"Surname"])
-    {
-        person.surname = cell.textField.text;
-    }
     if ([cell.coordinate.column.title isEqualToString:@"Title"])
     {
         // The title column uses our custom picker cell
         PickerCell* pickerCell = (PickerCell*) cell;
+        
         // Retrieve the selected index from the picker cell, which will map directly to a PersonTitle
         int title = pickerCell.selectedIndex;
         
         if (PersonDataObjectIsValidTitle(title)) {
             person.title = pickerCell.selectedIndex;
         } else {
-            pickerCell.textField.text = person.titleDisplayName;
+            pickerCell.selectedIndex = person.title;
+        }
+    } else {
+        SDataGridTextCell *textCell = (SDataGridTextCell*) cell;
+        
+        if ([cell.coordinate.column.title isEqualToString:@"Forename"])
+        {
+            person.forename = textCell.textField.text;
+        }
+        if ([cell.coordinate.column.title isEqualToString:@"Surname"])
+        {
+            person.surname = textCell.textField.text;
         }
     }
+    
 }
 
 @end

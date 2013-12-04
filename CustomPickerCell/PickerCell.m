@@ -24,6 +24,7 @@
 
 @implementation PickerCell
 {
+    UILabel* _label;
     PickerViewController* _pickerViewController;
     UIPopoverController* _popover;
 }
@@ -31,6 +32,11 @@
 - (id)initWithReuseIdentifier:(NSString *)identifier
 {
     if (self = [super initWithReuseIdentifier:identifier]) {
+        // Add a label
+        _label = [[UILabel alloc] init];
+        _label.font = [UIFont systemFontOfSize:15];
+        [self addSubview:_label];
+        
         // Create a PickerViewController ready to display when in edit mode
         _pickerViewController = [[PickerViewController alloc] init];
         _pickerViewController.delegate = self;
@@ -56,8 +62,15 @@
         _pickerViewController.selectedIndex = selectedIndex;
     
         // Update the displayed text with the new value
-        self.textField.text = [_values[selectedIndex] description];
+        //self.textField.text = [_values[selectedIndex] description];
+        _label.text = [_values[selectedIndex] description];
     }
+}
+
+- (void) setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    _label.frame = CGRectMake(20, 10, self.bounds.size.width-40, self.bounds.size.height-20);
 }
 
 #pragma mark PickerDelegate methods
@@ -80,14 +93,13 @@
 #pragma mark SGridEventResponder Protocol Methods
 
 // Called when the grid's edit event is triggered on this cell
-- (void) actUponEditEvent {
+/*- (void) actUponEditEvent {
     [self respondToEditEvent];
-}
+}*/
 
 // Called when the grid's edit event is triggered on this cell
 - (void) respondToEditEvent {
-    // Override the text cell's default edit response (showing the keyboard) and show a picker popover instead
-    // We need to call the grid's delegate methods for editing cells here, because that would be done in the text cell's method.
+    // We need to call the grid's delegate methods for editing cells before doing any more
     
     // Call the shouldBeginEditingCellAtCoordinate method on the grid's delegate (if the method exists)
     if ([self.dataGrid.delegate respondsToSelector:@selector(shinobiDataGrid:shouldBeginEditingCellAtCoordinate:)]) {

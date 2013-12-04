@@ -24,7 +24,6 @@
 @implementation PickerViewController
 {
     UIPickerView *_pickerView;
-    CGFloat largestLabelWidth;
 }
 
 - (void)loadView
@@ -36,10 +35,10 @@
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
         _pickerView.frame = CGRectMake(0, 0, 150, _pickerView.frame.size.height);
-        
-        // Select the row matching _selectedIndex
-        [_pickerView selectRow:_selectedIndex inComponent:0 animated:NO];
     }
+    
+    // Select the row matching _selectedIndex
+    [_pickerView selectRow:_selectedIndex inComponent:0 animated:NO];
     
     // Set our view to be _pickerView
     self.view = _pickerView;
@@ -72,7 +71,7 @@
 // Called when the user selects a row
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    // Call our PickerDelegate's selectedIndex method
+    // Call our PickerDelegate's didSelectRowAtIndex method
     if (_delegate != nil) {
         [_delegate didSelectRowAtIndex:row];
     }

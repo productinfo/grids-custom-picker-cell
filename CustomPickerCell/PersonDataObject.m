@@ -23,12 +23,6 @@
 
 @implementation PersonDataObject
 
-// Returns an array of title display names whose indices map to the PersonTitle enum
-+ (NSArray *)titleDisplayNames
-{
-    return @[@"Mr", @"Mrs", @"Miss", @"Ms", @"Dr"];
-}
-
 // Creates and returns a PersonDataObject with the given data
 + (PersonDataObject*) personWithTitle:(PersonTitle)title surname:(NSString*)surname forename:(NSString*)forename
 {
@@ -37,6 +31,12 @@
     obj.forename = forename;
     obj.surname = surname;
     return obj;
+}
+
+// Returns an array of title display names whose indices map to the PersonTitle enum
++ (NSArray *)titleDisplayNames
+{
+    return @[@"Mr", @"Mrs", @"Miss", @"Ms", @"Dr"];
 }
 
 // Returns the display name for this person's title, if the title is a valid PersonTitle, otherwise returns NULL

@@ -33,20 +33,19 @@ typedef NS_ENUM(NSUInteger, PersonTitle) {
     PersonTitleDr
 };
 
-#define PersonDataObjectIsValidTitle(title)\
-    (title == PersonTitleMr ||\
-     title == PersonTitleMrs ||\
-     title == PersonTitleMiss ||\
-     title == PersonTitleMs ||\
-     title == PersonTitleDr)
-
 @property (nonatomic) PersonTitle title;
 @property (strong, nonatomic) NSString* surname;
 @property (strong, nonatomic) NSString* forename;
 
+#define PersonDataObjectIsValidTitle(title)\
+(title == PersonTitleMr ||\
+title == PersonTitleMrs ||\
+title == PersonTitleMiss ||\
+title == PersonTitleMs ||\
+title == PersonTitleDr)
+
 + (PersonDataObject*) personWithTitle:(PersonTitle)title surname:(NSString*)surname forename:(NSString*)forename;
 + (NSArray *)titleDisplayNames;
 - (NSString *)titleDisplayName;
-- (NSString *)description;
 
 @end
