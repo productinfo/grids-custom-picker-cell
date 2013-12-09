@@ -70,32 +70,11 @@
 - (void) setFrame:(CGRect)frame
 {
     [super setFrame:frame];
+    // Set up the label's frame so it's inset by 20px from left/right and 10px from top/bottom
     _label.frame = CGRectMake(20, 10, self.bounds.size.width-40, self.bounds.size.height-20);
 }
 
-#pragma mark PickerDelegate methods
-
-// Called when the a new value has been selected in the UIPickerView
--(void)didSelectRowAtIndex:(int)newIndex {
-    // Set the the new index value
-    [self setSelectedIndex:newIndex];
-    
-    // Dismiss the popover
-    [_popover dismissPopoverAnimated:YES];
-    _popover = nil;
-    
-    // Call the didFinishEditingCellAtCoordinate method on the grid's delegate (if the method exists)
-    if ([self.dataGrid.delegate respondsToSelector:@selector(shinobiDataGrid:didFinishEditingCellAtCoordinate:)]) {
-        [self.dataGrid.delegate shinobiDataGrid:self.dataGrid didFinishEditingCellAtCoordinate:self.coordinate];
-    }
-}
-
-#pragma mark SGridEventResponder Protocol Methods
-
-// Called when the grid's edit event is triggered on this cell
-/*- (void) actUponEditEvent {
-    [self respondToEditEvent];
-}*/
+#pragma mark SGridEventResponder methods
 
 // Called when the grid's edit event is triggered on this cell
 - (void) respondToEditEvent {
@@ -115,7 +94,24 @@
     
     // Finally create and display the popover
     _popover = [[UIPopoverController alloc] initWithContentViewController:_pickerViewController];
-    [_popover presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+    [_popover presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+#pragma mark PickerDelegate methods
+
+// Called when the a new value has been selected in the UIPickerView
+-(void)didSelectRowAtIndex:(int)newIndex {
+    // Set the the new index value
+    [self setSelectedIndex:newIndex];
+    
+    // Dismiss the popover
+    [_popover dismissPopoverAnimated:YES];
+    _popover = nil;
+    
+    // Call the didFinishEditingCellAtCoordinate method on the grid's delegate (if the method exists)
+    if ([self.dataGrid.delegate respondsToSelector:@selector(shinobiDataGrid:didFinishEditingCellAtCoordinate:)]) {
+        [self.dataGrid.delegate shinobiDataGrid:self.dataGrid didFinishEditingCellAtCoordinate:self.coordinate];
+    }
 }
 
 @end
