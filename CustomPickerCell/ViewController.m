@@ -42,7 +42,7 @@
     _shinobiDataGrid.singleTapEventMask = SDataGridEventEdit;
     
     // Set up the license key if you're using the trial version
-    _shinobiDataGrid.licenseKey = @"NHH1ZmualDHxTMSMjAxNDAxMDNpbmZvQHNoaW5vYmljb250cm9scy5jb20=yuEfb5nKINCeL3Cd7BvEov5etl3xg80Pf8deKwR752raCRQbbKHqPY54LtHE8+hWXUdCNQIzR0LGCKCR7qMODgriD38DorVLlBl++mM8p09xPfbE+CE27RktXp1bR2dBw5ANcKiw8DIWxRNSt3nPsQTu+o7Q=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+"; // TODO: add your trial licence key here!
+    _shinobiDataGrid.licenseKey = @""; // TODO: add your trial licence key here!
     
     // Add a title column, with the custom PickerCell type
     SDataGridColumn* titleColumn = [[SDataGridColumn alloc] initWithTitle:@"Title" forProperty:@"title"];
