@@ -37,39 +37,39 @@
 {
     [super viewDidLoad];
 	
-    NSLog(@"Shinobi version: %@", [_shinobiDataGrid getInfo]);
+    NSLog(@"Shinobi version: %@", [self.shinobiDataGrid getInfo]);
     
-    _shinobiDataGrid.singleTapEventMask = SDataGridEventEdit;
+    self.shinobiDataGrid.singleTapEventMask = SDataGridEventEdit;
     
     // Set up the license key if you're using the trial version
-    _shinobiDataGrid.licenseKey = @""; // TODO: add your trial licence key here!
+    self.shinobiDataGrid.licenseKey = @""; // TODO: add your trial license key here!
     
     // Add a title column, with the custom PickerCell type
     SDataGridColumn* titleColumn = [[SDataGridColumn alloc] initWithTitle:@"Title" forProperty:@"title"];
     titleColumn.editable = YES;
     titleColumn.cellType = [PickerCell class];
-    [_shinobiDataGrid addColumn:titleColumn];
+    [self.shinobiDataGrid addColumn:titleColumn];
     
     // Add a forename column
     SDataGridColumn* forenameColumn = [[SDataGridColumn alloc] initWithTitle:@"Forename" forProperty:@"forename"];
     forenameColumn.editable = YES;
-    [_shinobiDataGrid addColumn:forenameColumn];
+    [self.shinobiDataGrid addColumn:forenameColumn];
     
     // Add a surname column
     SDataGridColumn* surnameColumn = [[SDataGridColumn alloc] initWithTitle:@"Surname" forProperty:@"surname"];
     surnameColumn.editable = YES;
-    [_shinobiDataGrid addColumn:surnameColumn];
+    [self.shinobiDataGrid addColumn:surnameColumn];
     
     // Create some data to populate the grid
     _data = [PersonDataSource generatePeople:20];
     
     // Create the data source helper and set its delegate and data
-    _datasourceHelper = [[SDataGridDataSourceHelper alloc] initWithDataGrid:_shinobiDataGrid];
+    _datasourceHelper = [[SDataGridDataSourceHelper alloc] initWithDataGrid:self.shinobiDataGrid];
     _datasourceHelper.delegate = self;
     _datasourceHelper.data = _data;
     
     // Set the grid's delegate
-    _shinobiDataGrid.delegate = self;
+    self.shinobiDataGrid.delegate = self;
 
 }
 
@@ -88,7 +88,7 @@
     {
         // Create a picker cell to display the title property
         PickerCell* pickerCell = (PickerCell*)cell;
-        pickerCell.dataGrid = _shinobiDataGrid;
+        pickerCell.dataGrid = self.shinobiDataGrid;
         pickerCell.values = [PersonDataObject titleDisplayNames];
         pickerCell.selectedIndex = [value integerValue];
         
@@ -105,7 +105,7 @@
 - (void)shinobiDataGrid:(ShinobiDataGrid *)grid didFinishEditingCellAtCoordinate:(SDataGridCoord *)coordinate
 {
     // Find the cell that was edited (all our cells are SDataGridTextCells)
-    SDataGridCell* cell = (SDataGridCell*)[_shinobiDataGrid visibleCellAtCoordinate:coordinate];
+    SDataGridCell* cell = (SDataGridCell*)[self.shinobiDataGrid visibleCellAtCoordinate:coordinate];
     
     // Locate the 'model' object for this row
     PersonDataObject* person = _data[coordinate.row.rowIndex];

@@ -87,7 +87,7 @@
         }
     }
     
-    // Call the willBeingEditingCellAtCoordinate method on the grid's delegate (if the method exists)
+    // Call the willBeginEditingCellAtCoordinate method on the grid's delegate (if the method exists)
     if ([self.dataGrid.delegate respondsToSelector:@selector(shinobiDataGrid:willBeginEditingCellAtCoordinate:)]) {
         [self.dataGrid.delegate shinobiDataGrid:self.dataGrid willBeginEditingCellAtCoordinate:self.coordinate];
     }
@@ -101,7 +101,7 @@
 
 // Called when the a new value has been selected in the UIPickerView
 -(void)didSelectRowAtIndex:(int)newIndex {
-    // Set the the new index value
+    // Set the new index value
     [self setSelectedIndex:newIndex];
     
     // Dismiss the popover
