@@ -1,7 +1,7 @@
 ShinobiGrids for iOS: Custom Picker Cell (Objective-C)
 =====================
 
-This project demonstrates how to add a custom editable cell to your ShinobiDataGrid.
+This project demonstrates how to add a custom editable cell to your ShinobiDataGrid. There's an accompanying blog post [here](http://www.shinobicontrols.com/blog/posts/2014/01/28/building-your-own-editable-data-grid-cells).
 
 ![Screenshot](screenshot.png?raw=true)
 
