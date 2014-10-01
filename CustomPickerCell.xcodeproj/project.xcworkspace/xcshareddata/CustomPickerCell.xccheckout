@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>197FFEF4-D86A-4063-A774-6F3E57853D27</string>
+	<string>5C982372-89C0-441A-8D86-86C50466FD3C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>CustomPickerCell</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>AA97F765-CC01-4EE7-9401-C072526C7E8F</key>
-		<string>https://github.com/alisonrclarke/grids-custom-picker-cell.git</string>
+		<key>DFCC7F01C4EF015ECE7204A14F25BBC9D808F460</key>
+		<string>https://github.com/ShinobiControls/grids-custom-picker-cell.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CustomPickerCell.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>AA97F765-CC01-4EE7-9401-C072526C7E8F</key>
+		<key>DFCC7F01C4EF015ECE7204A14F25BBC9D808F460</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/alisonrclarke/grids-custom-picker-cell.git</string>
+	<string>https://github.com/ShinobiControls/grids-custom-picker-cell.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AA97F765-CC01-4EE7-9401-C072526C7E8F</string>
+	<string>DFCC7F01C4EF015ECE7204A14F25BBC9D808F460</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>AA97F765-CC01-4EE7-9401-C072526C7E8F</string>
+			<string>DFCC7F01C4EF015ECE7204A14F25BBC9D808F460</string>
 			<key>IDESourceControlWCCName</key>
 			<string>grids-custom-picker-cell</string>
 		</dict>

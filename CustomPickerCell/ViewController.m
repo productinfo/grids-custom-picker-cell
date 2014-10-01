@@ -37,12 +37,10 @@
 {
     [super viewDidLoad];
 	
-    NSLog(@"Shinobi version: %@", [self.shinobiDataGrid getInfo]);
-    
     self.shinobiDataGrid.singleTapEventMask = SDataGridEventEdit;
     
     // Set up the license key if you're using the trial version
-    self.shinobiDataGrid.licenseKey = @""; // TODO: add your trial license key here!
+    [ShinobiDataGrids setLicenseKey:@""]; // TODO: add your trial license key here!
     
     // Add a title column, with the custom PickerCell type
     SDataGridColumn* titleColumn = [[SDataGridColumn alloc] initWithTitle:@"Title" forProperty:@"title"];
@@ -117,7 +115,7 @@
         PickerCell* pickerCell = (PickerCell*) cell;
         
         // Retrieve the selected index from the picker cell, which will map directly to a PersonTitle
-        int title = pickerCell.selectedIndex;
+        NSInteger title = pickerCell.selectedIndex;
         
         if (PersonDataObjectIsValidTitle(title)) {
             person.title = pickerCell.selectedIndex;

@@ -24,12 +24,12 @@
 
 @protocol PickerDelegate <NSObject>
 @required
--(void)didSelectRowAtIndex:(int)newIndex;
+-(void)didSelectRowAtIndex:(NSInteger)newIndex;
 @end
 
 @interface PickerViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
 
-@property (nonatomic, assign) int selectedIndex;
+@property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, strong) NSArray* values;
 @property (nonatomic, weak) id<PickerDelegate> delegate;
 

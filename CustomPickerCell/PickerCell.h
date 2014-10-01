@@ -27,7 +27,7 @@
  */
 @interface PickerCell : SDataGridCell<PickerDelegate>
 
-@property (nonatomic, assign) int selectedIndex;
+@property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, strong) NSArray* values;
 @property (nonatomic, strong) ShinobiDataGrid* dataGrid;
 

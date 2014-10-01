@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		681E899E1855C1F90042AE32 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681E899D1855C1F90042AE32 /* ShinobiGrids.framework */; };
 		683E7C72183CD94F0038CFF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683E7C71183CD94F0038CFF1 /* Foundation.framework */; };
 		683E7C74183CD94F0038CFF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683E7C73183CD94F0038CFF1 /* CoreGraphics.framework */; };
 		683E7C76183CD94F0038CFF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683E7C75183CD94F0038CFF1 /* UIKit.framework */; };
@@ -24,6 +23,7 @@
 		683E7CAD18436E6C0038CFF1 /* PersonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E7CAC18436E6C0038CFF1 /* PersonDataSource.m */; };
 		683E7CB018437E4B0038CFF1 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E7CAF18437E4A0038CFF1 /* PickerCell.m */; };
 		683E7CB618449FEA0038CFF1 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E7CB518449FEA0038CFF1 /* PickerViewController.m */; };
+		68FA77AB1883EA9A006C1F33 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FA77AA1883EA9A006C1F33 /* ShinobiGrids.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		681E899D1855C1F90042AE32 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = ../../../../Downloads/ShinobiGrids_Standard/ShinobiGrids.framework; sourceTree = "<group>"; };
 		683E7C6E183CD94F0038CFF1 /* CustomPickerCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPickerCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683E7C71183CD94F0038CFF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		683E7C73183CD94F0038CFF1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +61,7 @@
 		683E7CAF18437E4A0038CFF1 /* PickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerCell.m; sourceTree = "<group>"; };
 		683E7CB418449FEA0038CFF1 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PickerViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		683E7CB518449FEA0038CFF1 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PickerViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		68FA77AA1883EA9A006C1F33 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = Library/Frameworks/ShinobiGrids.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				681E899E1855C1F90042AE32 /* ShinobiGrids.framework in Frameworks */,
+				68FA77AB1883EA9A006C1F33 /* ShinobiGrids.framework in Frameworks */,
 				683E7C74183CD94F0038CFF1 /* CoreGraphics.framework in Frameworks */,
 				683E7C76183CD94F0038CFF1 /* UIKit.framework in Frameworks */,
 				683E7C72183CD94F0038CFF1 /* Foundation.framework in Frameworks */,
@@ -110,7 +110,7 @@
 		683E7C70183CD94F0038CFF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				681E899D1855C1F90042AE32 /* ShinobiGrids.framework */,
+				68FA77AA1883EA9A006C1F33 /* ShinobiGrids.framework */,
 				683E7C71183CD94F0038CFF1 /* Foundation.framework */,
 				683E7C73183CD94F0038CFF1 /* CoreGraphics.framework */,
 				683E7C75183CD94F0038CFF1 /* UIKit.framework */,
@@ -196,7 +196,7 @@
 		683E7C66183CD94F0038CFF1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Alison Clarke";
 				TargetAttributes = {
 					683E7C8E183CD9500038CFF1 = {
@@ -299,7 +299,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -339,7 +338,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -410,7 +408,6 @@
 		683E7CA4183CD9500038CFF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CustomPickerCell.app/CustomPickerCell";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -433,7 +430,6 @@
 		683E7CA5183CD9500038CFF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CustomPickerCell.app/CustomPickerCell";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

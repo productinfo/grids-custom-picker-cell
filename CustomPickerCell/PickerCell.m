@@ -52,7 +52,7 @@
     [_pickerViewController setValues:values];
 }
 
-- (void) setSelectedIndex:(int)selectedIndex
+- (void) setSelectedIndex:(NSInteger)selectedIndex
 {
     // Check the index is in the bounds of our values array
     if ([_values count] > selectedIndex)
@@ -100,7 +100,7 @@
 #pragma mark PickerDelegate methods
 
 // Called when the a new value has been selected in the UIPickerView
--(void)didSelectRowAtIndex:(int)newIndex {
+-(void)didSelectRowAtIndex:(NSInteger)newIndex {
     // Set the new index value
     [self setSelectedIndex:newIndex];
     
