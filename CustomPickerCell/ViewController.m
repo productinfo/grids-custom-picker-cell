@@ -40,7 +40,7 @@
     self.shinobiDataGrid.singleTapEventMask = SDataGridEventEdit;
     
     // Set up the license key if you're using the trial version
-    [ShinobiDataGrids setLicenseKey:@""]; // TODO: add your trial license key here!
+    [ShinobiDataGrids setTrialKey:@""]; // TODO: add your trial key here!
     
     // Add a title column, with the custom PickerCell type
     SDataGridColumn* titleColumn = [[SDataGridColumn alloc] initWithTitle:@"Title" forProperty:@"title"];
